@@ -4,7 +4,7 @@ let fetchBreedDescription = (breed, callback) =>  {
     if (error) return callback(error, null);
     let desc = JSON.parse(body)[0];
     if (desc) return callback(null, desc.description);
-    if (!desc.length) return callback('no cats', null);
+    if (!desc) return callback('no cats', null);
   });
 };
 module.exports = fetchBreedDescription;
